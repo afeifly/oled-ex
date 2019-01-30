@@ -6,7 +6,8 @@
   <h1>Hello, World!</h1>
 <form action="/sendmsg" method="post">
   Message:<br>
-  <input type="checkbox" name="display" value="0"> show in display<br>
+  <input type="radio" name="options" value="0" checked > Speak <br>
+  <input type="radio" name="options" value="1"> Speak & Display <br>
   </input>
   <textarea id="txtArea" name='msg' rows="10" cols="70"></textarea>
   <input type="submit" value="Submit" />

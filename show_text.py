@@ -13,7 +13,8 @@ from PIL import ImageFont
 
 def show(device,msg):
     # use custom font
-    font_path = os.path.abspath(os.path.join(os.path.dirname(__file__),'fonts', 'code2000.ttf')) # 导入字体文件
+    #font_path = os.path.abspath(os.path.join(os.path.dirname(__file__),'fonts', 'code2000.ttf')) # 导入字体文件
+    font_path = os.path.abspath(os.path.join(os.path.dirname(__file__),'fonts', 'NotoSansMonoCJKsc-Regular.otf')) # 导入字体文件
     font2 = ImageFont.truetype(font_path, 12)   #设置字体类型和字体大小
     lenght = 12;
     # 开始输出
@@ -29,9 +30,9 @@ def show(device,msg):
             if strln<start:
                 break
             elif strln<end:
-                draw.text((0, lenght*row), msg[start:strln], font=font2, fill="white")
+                draw.text((0, lenght*row+row), msg[start:strln], font=font2, fill="white")
             else:
-                draw.text((0, lenght*row), msg[start:end], font=font2, fill="white")
+                draw.text((0, lenght*row+row), msg[start:end], font=font2, fill="white")
 
 def send(msg):
     # 如果不写在循环里，执行完程序就退出了，就看不到内容
