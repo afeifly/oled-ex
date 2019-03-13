@@ -1,11 +1,16 @@
 from flask import Flask,render_template,request
+from flask_cors import *
 import show_text
 import restclient
-app = Flask(__name__)
-
+#app = Flask(__name__, static_folder="/templates/build/static", template_folder="/templates/build")
+app = Flask(__name__, static_url_path='/static', template_folder='templates')
+CORS(app,supports_credentials=True)
 @app.route("/")
 def hello():
-    return render_template('main.html') 
+    return render_template('/index.html') 
+@app.route("/test")
+def test():
+    return render_template('/index.html') 
 
 @app.route("/sendmsg",methods=['GET','POST'])
 def sendmsg():
@@ -19,7 +24,6 @@ def sendmsg():
     else :
         show_text.send(msg)
         restclient.send(msg)
-    return render_template('main.html') 
-
+    return 'ok'
 if __name__ == '__main__':
     app.run(host='0.0.0.0',debug=True)
