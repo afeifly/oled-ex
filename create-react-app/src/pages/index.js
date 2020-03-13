@@ -67,8 +67,6 @@ class Index extends React.Component {
 	  , body:new URLSearchParams(
 		  "msg="
 		  + this.state.txtVal 
-		  +"&options="
-		  + this.state.selectedValue
 	  )
   })
 
@@ -108,31 +106,11 @@ class Index extends React.Component {
         </Typography>
 	<form  autoComplete="off">
 <FormControl component="fieldset" className={classes.formControl}>
-          <RadioGroup
-            name="speakRG"
-	    value={this.state.selectedValue}
-            onChange={this.handleChange}
-          >
-          <FormControlLabel
-	    value='0'
-            control={<Radio color="primary" />}
-	    name='r-chanel-b'
-            label="Speak"
-	    checked={this.state.selectedValue==='0'}
-           />
-          <FormControlLabel
-	    value='1'
-            control={<Radio color="primary" />}
-	    name='r-chanel-b'
-            label="Speak & Display"
-	    checked={this.state.selectedValue==='1'}
-          />	
-	 </RadioGroup>
 	 <TextField
           id="standard-full-width"
 	  onChange={this.handleTxtChange}
           label="Please"
-          style={{ margin: 8,width:400, }}
+          style={{ marginBottom: 5,width:400, }}
           margin="normal"
           placeholder="Input here"
           InputLabelProps={{

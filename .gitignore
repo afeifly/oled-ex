@@ -4,4 +4,5 @@ nohup.out
 *.py[cod]
 create-react-app/build/
 create-react-app/node_modules/
+create-react-app/package-lock.json
 
