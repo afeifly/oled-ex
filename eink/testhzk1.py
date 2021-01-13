@@ -1,7 +1,13 @@
 import binascii
+import base64
 KEYS = [0x80, 0x40, 0x20, 0x10, 0x08, 0x04, 0x02, 0x01]
 
+def print_hex(bytes):
+    l = [hex(int(i)) for i in bytes]
+    print(" ".join(l))
+
 def printPlay(textStr,line,background):
+
     # 初始化16*16的点阵位置，每个汉字需要16*16=256个点来表示，需要32个字节才能显示一个汉字
     # 之所以32字节：256个点每个点是0或1，那么总共就是2的256次方，一个字节是2的8次方
     rect_list = [] * 16
@@ -32,6 +38,10 @@ def printPlay(textStr,line,background):
             #从该字模数据中读取32字节数据
             font_rect = f.read(32)
 
+        print('font rect ===== ')
+        print_hex(font_rect)
+        print('font rect base64 ===== ')
+        print(base64.b64encode(font_rect))
         #font_rect的长度是32，此处相当于for k in range(16)
         for k in range(len(font_rect) // 2):
             #每行数据
@@ -46,6 +56,22 @@ def printPlay(textStr,line,background):
 
     for row in rect_list:
         print(row)
+    lenOfArray = len(rect_list)
+    print('::: row = ' + str(lenOfArray ))
+    varAlltxt = ''
+    for row in rect_list:
+      varrow = '' 
+      for i in row:
+        varrow = varrow + hex(i) + ','
+      print(varrow)
+      varAlltxt = varAlltxt + varrow
+    print('::: to be base64')
+    varAlltxt = varAlltxt[:-1]
+    print(varAlltxt)
+    print('::: be base64')
+    
+    #TODO need a byte array
+    #print(base64.b64encode(varAlltxt))
 
     #根据获取到的16*16点阵信息，打印到控制台
     for row in rect_list:
@@ -67,3 +93,5 @@ backgroundSign = '○'
 #backgroundSign = "."
 printPlay(inpt,lineSign,backgroundSign)
 
+print('Just test base64')
+print(base64.b64encode(b'nothing tod o'))
