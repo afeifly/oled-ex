@@ -1,5 +1,6 @@
 # What's In
 ## Structure
+```bash
 ├── HZK12
 ├── HZK16
 ├── README.md
@@ -8,6 +9,7 @@
 ├── testhzk1.py      //python get string's bytep[] from HZK16 
 ├── testhzk2.py
 └── testttf.py       //python get string's byte[] from ttf 
+```
 
 ## Compile C++ 
 
