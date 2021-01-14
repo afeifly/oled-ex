@@ -9,6 +9,7 @@ def print_hex(bytes):
 
 
 def getEncodeHZK(textStr):
+    array = []
     # 初始化16*16的点阵位置，每个汉字需要16*16=256个点来表示，需要32个字节才能显示一个汉字
     # 之所以32字节：256个点每个点是0或1，那么总共就是2的256次方，一个字节是2的8次方
     rect_list = [] * 16
@@ -39,7 +40,9 @@ def getEncodeHZK(textStr):
         print('font rect base64 ===== ')
         encodeTxt = base64.b64encode(font_rect) 
         print(encodeTxt)
-        return encodeTxt
+        array.append(encodeTxt.decode("utf-8"))
+    return array
+        
 
  
 
@@ -134,3 +137,4 @@ print(base64.b64encode(b'nothing tod o'))
 encodemsg = getEncodeHZK('你好')
 print('xxxxxxxx')
 print(encodemsg)
+

@@ -46,7 +46,7 @@ def fetch():
       return jsonify(
         index=messageIndex,
         msg=messageTxt,
-        encode=getEncodeHZK(messageTxt).decode("utf-8"),
+        encode=getEncodeHZK(messageTxt),
         time=messageTime
       )
 
