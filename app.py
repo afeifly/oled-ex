@@ -23,7 +23,10 @@ def test():
 
 @app.route("/updatemsg",methods=['GET','POST'])
 def updatemsg():
-  msg = request.form['msg']
+  content = request.get_json(silent=True)
+  print('content')
+  print(content)
+  msg = content['msg']
   global messageIndex 
   global messageTxt
   messageIndex += 1

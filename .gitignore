@@ -1,8 +1,11 @@
+.DS_Store
 __pycache__/
 fonts/
 nohup.out
 *.py[cod]
-create-react-app/build/
-create-react-app/node_modules/
-create-react-app/package-lock.json
-
+eink-web/build/
+eink-web/node_modules/
+eink-web/package-lock.json
+oled-web/build/
+oled-web/node_modules/
+oled-web/package-lock.json

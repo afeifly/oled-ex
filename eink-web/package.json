@@ -1,0 +1,27 @@
+{
+  "name": "create-react-app",
+  "version": "3.2.2",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "latest",
+    "http-proxy-middleware": "^0.19.1",
+    "prop-types": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-scripts": "^4.0.1",
+    "ts-pnp": "^1.0.1",
+    "typescript": "^3.3.3333"
+  },
+  "scripts": {
+    "start": "PORT=3001 react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
