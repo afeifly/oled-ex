@@ -4,6 +4,7 @@ from flask import jsonify
 import show_text
 import restclient
 import datetime
+from pythonlib.testhzk1 import getEncodeHZK
 #app = Flask(__name__, static_folder="/templates/build/static", template_folder="/templates/build")
 app = Flask(__name__, static_url_path='/static', template_folder='templates')
 CORS(app,supports_credentials=True)
@@ -45,6 +46,7 @@ def fetch():
       return jsonify(
         index=messageIndex,
         msg=messageTxt,
+        encode=getEncodeHZK(messageTxt).decode("utf-8"),
         time=messageTime
       )
 

@@ -38,8 +38,12 @@ std::string bytes_to_string(const std::vector<char>& v) {
 int main() {
 	std::cout << ("helloe");
 
-	std::cout << (bytes_to_string(base64_decode("EQARABEAI/wiBGQIqEAgQCFQIUgiTCREIEAgQCFAIIA=")));
-	std::vector<char> vv = base64_decode("EQARABEAI/wiBGQIqEAgQCFQIUgiTCREIEAgQCFAIIA=");
+//	std::cout << (bytes_to_string(base64_decode("EQARABEAI/wiBGQIqEAgQCFQIUgiTCREIEAgQCFAIIA=")));
+//	std::vector<char> vv = base64_decode("EQARABEAI/wiBGQIqEAgQCFQIUgiTCREIEAgQCFAIIA=");
+//
+  std::string text = "AAAABH/+RERERERERERERERERDxIBFAEQAR//EAEAAA=";
+	std::cout << (bytes_to_string(base64_decode(text)));
+	std::vector<char> vv = base64_decode(text);
 	std::cout << "size() = " << vv.size();
 	std::cout << std::endl;
 	for (int i = 0; i<vv.size(); ++i)
