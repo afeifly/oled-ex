@@ -48,9 +48,9 @@ int main() {
 	std::cout << std::endl;
 	for (int i = 0; i<vv.size(); ++i)
 	{
-		std::cout << std::hex << (0xFF & vv[i]);
-		std::cout << std::endl;
+		std::cout << "0x" << std::hex << (0xFF & vv[i]) << ",";
 	}
+	std::cout << std::endl;
 
 	/**
 	std::cout << (bytes_to_string(base64_decode("TWFuIGlzIGRpc3Rpbmd1aXNoZWQsIG5vdCBvbmx5IGJ5IGhpcyByZWFzb24sIGJ1dCBieSB0aGlz"

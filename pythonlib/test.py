@@ -68,18 +68,32 @@ def getEncodeHZK(textStr):
             index = eval('0x' + result[2:]) - 0xA0
             offset = (94 * (area-1) + (index-1)) * 32
             font_rect = None
+            print("read start")
             # 读取HZK16汉字库文件
             with open("HZK16", "rb") as f:
                 # 找到目标汉字的偏移位置
                 f.seek(offset)
                 # 从该字模数据中读取32字节数据
                 font_rect = f.read(32)
+            print('font rect array 32 = ')
+            print('1')
+            print(font_rect)
+            print('2')
+            print(font_rect.decode('utf-8'))
+            print('3')
+            for i in font_rect:
+                print('%#x'%ord(i)) 
+            #print(font_rect.decode("utf-8"))
+            print('4')
+            #print_hex(font_rect.decode("utf-8"))
             encodeTxt = base64.b64encode(font_rect) 
-            print2console(font_rect)
+            print(encodeTxt)
+
+            # print2console(font_rect)
             array.append(encodeTxt.decode("utf-8"))
         except Exception as e:
+            print('EEEEEEEEE:::::')
             waxx = numsofone_in_charbytes(text)
-            print(':::::')
             print(waxx)
             print2console(numsofone_in_charbytes(text))
             encodeTxt = base64.b64encode(numsofone_in_charbytes(text)) 
